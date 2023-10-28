@@ -9,19 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tabler/icons-react": "^2.40.0",
+    "install": "^0.13.0",
+    "next": "14.0.0",
+    "npm": "^10.2.1",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.0.0"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@iconify/react": "^4.1.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.0",
     "postcss": "^8",
     "tailwindcss": "^3",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.0"
+    "typescript": "^5"
   }
 }

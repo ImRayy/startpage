@@ -1,20 +1,37 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
+      fontFamily: {
+        BebasNeue: ["Bebas Neue", "sans-serif"],
+      },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      colors: {
+        primary: "#1E2326",
+        secondary: "#272e33",
+        hover: "#2E2E2E",
+        crust: "#A7c080",
+        color1: "#d3c6aa",
+        color2: "#e67e80",
+        color3: "#e69875",
+        color4: "#dbbc7f",
+        color5: "#a7c080",
+        color6: "#83c092",
+        color7: "#7fbbb3",
+        color8: "#d699b6",
       },
     },
   },
   plugins: [],
-}
-export default config
+};
+export default config;
