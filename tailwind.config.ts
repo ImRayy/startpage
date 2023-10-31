@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        BebasNeue: ["Bebas Neue", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -29,6 +29,10 @@ const config: Config = {
         color6: "#83c092",
         color7: "#7fbbb3",
         color8: "#d699b6",
+      },
+      boxShadow: {
+        custom:
+          "1px 1px 0px 0px rgba(0, 0, 0, 0.1), 2px 2px 0px 0px rgba(0, 0, 0, 0.1), 3px 3px 0px 0px rgba(0, 0, 0, 0.1), 4px 4px 0px 0px rgba(0, 0, 0, 0.1), 5px 5px 0px 0px rgba(0, 0, 0, 0.1)",
       },
     },
   },
