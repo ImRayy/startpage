@@ -12,13 +12,13 @@ const color8 = "#d699b6";
 const tab_title = {
   text: "day",
   image: {
-    url: "image.webp",
+    url: "https://ik.imagekit.io/rayshold/dotfiles/startpage/image.webp?updatedAt=1698519594209",
   },
 };
 const open_links_in_new_tab: boolean = true;
 const tabs: Tab[] = [
   {
-    name: "tab1",
+    name: "一",
     categories: [
       {
         name: "social media",
@@ -86,7 +86,7 @@ const tabs: Tab[] = [
     ],
   },
   {
-    name: "tab1",
+    name: "二",
     categories: [
       {
         name: "FUCK FACE",

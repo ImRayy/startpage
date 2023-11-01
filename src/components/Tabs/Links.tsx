@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../Button";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Link } from "../../../Types/TabInterface";
+import { motion } from "framer-motion";
 
 interface LinksProps {
   categoryName: string;
@@ -16,10 +17,17 @@ const Links = ({ categoryName, links }: LinksProps) => {
       <div className="flex gap-3 flex-wrap mb-2 ">
         {links !== undefined &&
           links.map((link, index) => (
-            <Button href={link.url} key={index}>
-              <Icon icon={link.icon} color={link.color} fontSize={24} />
-              {link.name}
-            </Button>
+            <motion.span
+              initial={{ x: 200 }}
+              animate={{ x: 0 }}
+              transition={{ duration: `0.${index === 0 ? 4 : index + 4}` }}
+              key={index}
+            >
+              <Button href={link.url}>
+                <Icon icon={link.icon} color={link.color} fontSize={24} />
+                {link.name}
+              </Button>
+            </motion.span>
           ))}
       </div>
     </div>
