@@ -7,8 +7,9 @@ import { motion } from "framer-motion";
 interface LinksProps {
   categoryName: string;
   links: Link[];
+  enableAnimations: boolean;
 }
-const Links = ({ categoryName, links }: LinksProps) => {
+const Links = ({ categoryName, links, enableAnimations }: LinksProps) => {
   return (
     <div className="flex flex-col gap-2">
       <h3 className="uppercase border-zinc-700 text-sm font-bold  text-crust">
@@ -18,7 +19,7 @@ const Links = ({ categoryName, links }: LinksProps) => {
         {links !== undefined &&
           links.map((link, index) => (
             <motion.span
-              initial={{ x: 200 }}
+              initial={enableAnimations ? { x: 200 } : false}
               animate={{ x: 0 }}
               transition={{ duration: `0.${index === 0 ? 4 : index + 4}` }}
               key={index}

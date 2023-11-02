@@ -35,39 +35,39 @@ const tabs: Tab[] = [
             icon: "tabler:brand-reddit",
             color: color3,
           },
+          {
+            name: "YouTube",
+            url: "https://www.youtube.com/",
+            icon: "tabler:brand-youtube",
+            color: color2,
+          },
         ],
       },
       {
-        name: "work",
+        name: "Anime",
         links: [
           {
-            name: "tailwindcss",
-            url: "https://tailwindcss.com/",
-            icon: "tabler:brand-tailwind",
-            color: color7,
-          },
-          {
-            name: "github",
-            url: "https://github.com/",
-            icon: "tabler:brand-github",
-            color: "white",
-          },
-          {
-            name: "ChatGPT",
-            url: "https://chat.openai.com/chat",
-            icon: "tabler:brand-openai",
+            name: "AniList",
+            url: "https://anilist.co/home",
+            icon: "simple-icons:anilist",
             color: color6,
           },
           {
-            name: "phind",
-            url: "https://www.phind.com/",
-            icon: "tabler:brand-openai",
-            color: "white",
+            name: "pixiv",
+            url: "https://www.pixiv.net/en/",
+            icon: "simple-icons:pixiv",
+            color: color7,
+          },
+          {
+            name: "r/AnimeArt",
+            url: "https://www.reddit.com/r/AnimeART/",
+            icon: "tabler:brand-reddit",
+            color: color3,
           },
         ],
       },
       {
-        name: "entertainment",
+        name: "music",
         links: [
           {
             name: "spotify",
@@ -76,9 +76,9 @@ const tabs: Tab[] = [
             color: color5,
           },
           {
-            name: "YouTube",
-            url: "https://www.youtube.com/",
-            icon: "tabler:brand-youtube",
+            name: "radio",
+            url: "https://r-a-d.io/",
+            icon: "tabler:radio",
             color: color2,
           },
         ],
@@ -89,19 +89,83 @@ const tabs: Tab[] = [
     name: "二",
     categories: [
       {
-        name: "FUCK FACE",
+        name: "resources",
         links: [
           {
-            name: "whatscrap",
-            url: "https://web.whatsapp.com/",
-            icon: "tabler:brand-whatsapp",
-            color: color5,
+            name: "tailwindcss",
+            url: "https://tailwindcss.com/",
+            icon: "tabler:brand-tailwind",
+            color: color7,
           },
           {
-            name: "reddit",
-            url: "https://www.reddit.com/",
-            icon: "tabler:brand-reddit",
+            name: "adobe color",
+            url: "https://icon-sets.iconify.design/tabler/brand-adobe/",
+            icon: "tabler:brand-adobe",
+            color: color2,
+          },
+          {
+            name: "real time colors",
+            url: "https://www.realtimecolors.com",
+            icon: "tabler:color-swatch",
+            color: color6,
+          },
+          {
+            name: "nerd font icons",
+            url: "https://icon-sets.iconify.design/?query=icon",
+            icon: "tabler:sunglasses",
             color: color3,
+          },
+          {
+            name: "phind",
+            url: "https://www.phind.com/",
+            icon: "tabler:brand-openai",
+            color: color4,
+          },
+          {
+            name: "ChatGPT",
+            url: "https://chat.openai.com/chat",
+            icon: "tabler:brand-openai",
+            color: color6,
+          },
+        ],
+      },
+      {
+        name: "code",
+        links: [
+          {
+            name: "GitHub",
+            url: "https://github.com/",
+            icon: "tabler:brand-github",
+            color: color1,
+          },
+          {
+            name: "pretty code",
+            url: "https://ray.so/",
+            icon: "tabler:device-ipad-horizontal-code",
+            color: color8,
+          },
+          {
+            name: "snippet generator",
+            url: "https://snippet-generator.app/",
+            icon: "tabler:code",
+            color: color4,
+          },
+        ],
+      },
+      {
+        name: "games",
+        links: [
+          {
+            name: "monketype",
+            url: "https://monkeytype.com/",
+            icon: "tabler:keyboard",
+            color: color4,
+          },
+          {
+            name: "zty.pe",
+            url: "https://zty.pe/",
+            icon: "tabler:rocket",
+            color: color2,
           },
         ],
       },
