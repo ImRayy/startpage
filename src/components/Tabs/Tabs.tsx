@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Tab from "./Tab";
 import { tabs } from "../../../config/tabs";
-import { AnimatePresence, motion } from "framer-motion";
 import StatusBar from "../StatusBar";
 
 interface TabsProps {
@@ -15,22 +14,24 @@ const Tabs = ({ enableAnimations }: TabsProps) => {
       <div className="absolute w-full bottom-0">
         <StatusBar tabs={tabs} setSelectedTab={setSelectedTab} />
       </div>
-      <AnimatePresence mode="wait">
-        <div className="w-full bg-primary flex overflow-hidden border-2 border-color5">
-          <motion.div
-            key={selectedTab ? selectedTab : ""}
-            initial={enableAnimations ? { x: 200 } : false}
-            animate={{ x: 0 }}
-            transition={{ duration: 0.3 }}
-            className="w-full"
-          >
-            <Tab
-              categories={tabs[selectedTab].categories}
-              enableAnimations={enableAnimations}
-            />
-          </motion.div>
+      <div className="w-full bg-primary flex overflow-hidden border-2 border-color5">
+        <div
+          key={selectedTab ? selectedTab : ""}
+          style={
+            enableAnimations
+              ? {
+                  animation: `slide-in-right 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both`,
+                }
+              : {}
+          }
+          className="w-full"
+        >
+          <Tab
+            categories={tabs[selectedTab].categories}
+            enableAnimations={enableAnimations}
+          />
         </div>
-      </AnimatePresence>
+      </div>
     </div>
   );
 };

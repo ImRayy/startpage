@@ -5,7 +5,6 @@ interface HomeProps {
   isPageLoaded: boolean;
 }
 export default function Home({ isPageLoaded }: HomeProps) {
-  console.log(isPageLoaded);
   return (
     <main
       className="font-roboto"

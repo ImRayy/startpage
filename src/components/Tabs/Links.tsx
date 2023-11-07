@@ -2,7 +2,6 @@ import React from "react";
 import Button from "../Button";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Link } from "../../../Types/TabInterface";
-import { motion } from "framer-motion";
 
 interface LinksProps {
   categoryName: string;
@@ -18,17 +17,23 @@ const Links = ({ categoryName, links, enableAnimations }: LinksProps) => {
       <div className="flex gap-3 flex-wrap mb-2 ">
         {links !== undefined &&
           links.map((link, index) => (
-            <motion.span
-              initial={enableAnimations ? { x: 200 } : false}
-              animate={{ x: 0 }}
-              transition={{ duration: `0.${index === 0 ? 4 : index + 4}` }}
+            <span
               key={index}
+              style={
+                enableAnimations
+                  ? {
+                      animation: `button-slide-in-right ${
+                        index === 0 ? 0.6 : index / 10 + 0.6
+                      }s cubic-bezier(0.250, 0.460, 0.450, 0.940) both`,
+                    }
+                  : {}
+              }
             >
               <Button href={link.url}>
                 <Icon icon={link.icon} color={link.color} fontSize={24} />
                 {link.name}
               </Button>
-            </motion.span>
+            </span>
           ))}
       </div>
     </div>

@@ -16,6 +16,19 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      keyframes: {
+        "slide-in-right": {
+          "0%": {
+            transform: "translateX(200px)",
+            opacity: "0",
+          },
+          "100%": {
+            transform: "translateX(0)",
+            opacity: "1",
+          },
+        },
+      },
+      animation: {},
       colors: {
         primary: "#1E2326",
         secondary: "#272e33",
