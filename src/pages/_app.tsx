@@ -5,6 +5,7 @@ import { enable_animations_on_initial_page_load as animations } from "../../conf
 
 export default function App({ Component, pageProps }: AppProps) {
   const [isPageLoaded, setIsPageLoaded] = useState(animations);
+
   useEffect(() => {
     setIsPageLoaded(true);
   }, []);

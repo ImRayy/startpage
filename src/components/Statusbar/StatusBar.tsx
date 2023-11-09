@@ -1,6 +1,6 @@
 import React, { SetStateAction } from "react";
-import { Tab } from "../../Types/TabInterface";
-import { status_bar } from "../../config/general";
+import { Tab } from "../../../Types/TabInterface";
+import { status_bar } from "../../../config/general";
 
 interface StatusBarProps {
   tabs: Tab[];

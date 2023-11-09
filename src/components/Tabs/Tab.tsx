@@ -3,17 +3,23 @@ import { tab_title } from "../../../config/tabs";
 import Title from "./Title";
 import { Category } from "../../../Types/TabInterface";
 import Links from "./Links";
+import Search from "./Search";
 
 interface TabProps {
   categories: Category[];
   enableAnimations: boolean;
+  toggleSearchWindow: boolean;
 }
-const Tab = ({ categories, enableAnimations }: TabProps) => {
+const Tab = ({
+  categories,
+  enableAnimations,
+  toggleSearchWindow,
+}: TabProps) => {
   return (
-    <div className="w-full h-[30rem] p-4 flex gap-2 bg-primary shadow-md">
+    <div className="w-full h-[30rem] flex gap-2 bg-primary shadow-md relative">
       {/* IMAGE */}
       <div
-        className="hidden sm:block h-full  w-full overflow-hidden sm:w-4/6 lg:w-3/6 shadow-md gap-4"
+        className="hidden m-4 sm:block h-full  w-full overflow-hidden sm:w-4/6 lg:w-3/6 shadow-md gap-4"
         style={
           enableAnimations
             ? {
@@ -56,6 +62,7 @@ const Tab = ({ categories, enableAnimations }: TabProps) => {
             ))}
         </div>
       </div>
+      <Search isShow={toggleSearchWindow} />
     </div>
   );
 };
