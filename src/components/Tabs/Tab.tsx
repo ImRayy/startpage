@@ -13,7 +13,7 @@ const Tab = ({ categories, enableAnimations }: TabProps) => {
     <div className="w-full h-[30rem] p-4 flex gap-2 bg-primary shadow-md">
       {/* IMAGE */}
       <div
-        className="h-full  w-full overflow-hidden sm:w-4/6 lg:w-3/6 shadow-md gap-4"
+        className="hidden sm:block h-full  w-full overflow-hidden sm:w-4/6 lg:w-3/6 shadow-md gap-4"
         style={
           enableAnimations
             ? {
@@ -39,7 +39,7 @@ const Tab = ({ categories, enableAnimations }: TabProps) => {
         </div>
       </div>
       {/* LINKS */}
-      <div className="hidden sm:flex sm:items-center w-full overflow-hidden overflow-y-scroll">
+      <div className="flex items-center w-full overflow-hidden overflow-y-scroll">
         <div className="w-full p-8 h-full flex flex-col gap-4 justify-start">
           {categories !== undefined &&
             categories.map((category, index) => (

@@ -11,10 +11,10 @@ interface LinksProps {
 const Links = ({ categoryName, links, enableAnimations }: LinksProps) => {
   return (
     <div className="flex flex-col gap-2">
-      <h3 className="uppercase border-zinc-700 text-sm font-bold  text-crust">
+      <h3 className="uppercase mb-2 border-zinc-700 text-sm font-bold  text-crust">
         {categoryName}
       </h3>
-      <div className="flex gap-3 flex-wrap mb-2 ">
+      <div className="flex sm:justify-start gap-3 flex-wrap mb-2">
         {links !== undefined &&
           links.map((link, index) => (
             <span
@@ -31,7 +31,7 @@ const Links = ({ categoryName, links, enableAnimations }: LinksProps) => {
             >
               <Button href={link.url}>
                 <Icon icon={link.icon} color={link.color} fontSize={24} />
-                {link.name}
+                <span className="hidden sm:block">{link.name}</span>
               </Button>
             </span>
           ))}
