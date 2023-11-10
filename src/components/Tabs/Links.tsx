@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../Button";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { Link } from "../../../Types/TabInterface";
+import { Link } from "../../types/TabInterface";
 
 interface LinksProps {
   categoryName: string;

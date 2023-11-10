@@ -1,4 +1,4 @@
-import { Tab } from "../Types/TabInterface";
+import { Tab } from "../src/types/TabInterface";
 
 const color1 = "#d3c6aa";
 const color2 = "#e67e80";

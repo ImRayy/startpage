@@ -1,5 +1,5 @@
 import React, { SetStateAction } from "react";
-import { Tab } from "../../../Types/TabInterface";
+import { Tab } from "../../types/TabInterface";
 import { status_bar } from "../../../config/general";
 
 interface StatusBarProps {

@@ -13,12 +13,18 @@ const Tabs = ({ enableAnimations }: TabsProps) => {
   const [toggleSearchWindow, setToggleSearchWindow] = useState(false);
 
   useEffect(() => {
-    // Handle key press
+    // Key mappings
     const keyPressHandler = (event: KeyboardEventInit): void => {
-      if (event.key === "s") {
-        setToggleSearchWindow(true);
-      } else if (event.key === "Escape") {
-        setToggleSearchWindow(false);
+      const data: { [key: string]: () => void } = {
+        s: () => setToggleSearchWindow(true),
+        Escape: () => setToggleSearchWindow(false),
+        1: () => setSelectedTab(0),
+        2: () => setSelectedTab(1),
+      };
+      const key: string | undefined = event.key;
+      const action = key !== undefined ? data[key] : undefined;
+      if (action) {
+        action();
       }
     };
     document.addEventListener("keydown", keyPressHandler);

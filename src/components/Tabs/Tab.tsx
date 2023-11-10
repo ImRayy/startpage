@@ -1,7 +1,7 @@
 import React from "react";
 import { tab_title } from "../../../config/tabs";
 import Title from "./Title";
-import { Category } from "../../../Types/TabInterface";
+import { Category } from "../../types/TabInterface";
 import Links from "./Links";
 import Search from "./Search";
 
