@@ -23,7 +23,7 @@ const Links = ({ categoryName, links, enableAnimations }: LinksProps) => {
                 enableAnimations
                   ? {
                       animation: `button-slide-in-right ${
-                        index === 0 ? 0.6 : index / 10 + 0.6
+                        index === 0 ? 0.4 : index / 10 + 0.4
                       }s cubic-bezier(0.250, 0.460, 0.450, 0.940) both`,
                     }
                   : {}

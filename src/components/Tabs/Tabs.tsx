@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Tab from "./Tab";
 import { tabs } from "../../../config/tabs";
 import StatusBar from "../Statusbar/StatusBar";
+import Search from "./Search";
 
 interface TabsProps {
   enableAnimations: boolean;
@@ -10,6 +11,7 @@ interface TabsProps {
 const Tabs = ({ enableAnimations }: TabsProps) => {
   const [selectedTab, setSelectedTab] = useState(0);
   const [toggleSearchWindow, setToggleSearchWindow] = useState(false);
+
   useEffect(() => {
     // Handle key press
     const keyPressHandler = (event: KeyboardEventInit): void => {
@@ -41,9 +43,9 @@ const Tabs = ({ enableAnimations }: TabsProps) => {
           <Tab
             categories={tabs[selectedTab].categories}
             enableAnimations={enableAnimations}
-            toggleSearchWindow={toggleSearchWindow}
           />
         </div>
+        <Search isShow={toggleSearchWindow} />
       </div>
       <div className="absolute w-full bottom-0 mt-10">
         <StatusBar tabs={tabs} setSelectedTab={setSelectedTab} />

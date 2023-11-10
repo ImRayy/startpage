@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Input from "../Input";
 import { search_engines } from "../../../config/general";
 import { useRouter } from "next/router";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface SearchProps {
   isShow: boolean;
@@ -10,7 +11,18 @@ const Search = ({ isShow }: SearchProps) => {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const engines = search_engines.map((i) => `!${i[1]}`);
-
+  const inputRef = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    if (isShow && inputRef.current) {
+      inputRef.current.focus();
+    } else if (inputRef.current) {
+      inputRef.current.blur();
+    }
+  }, [isShow]);
+  const inputChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    setQuery(value);
+  };
   // Form submit handler
   const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -32,26 +44,47 @@ const Search = ({ isShow }: SearchProps) => {
       router.push(search_engines[0][0] + search_query.join(" "));
     }
   };
+
   return (
-    <div
-      className={`w-full  h-full flex flex-col items-center justify-center absolute backdrop-blur-md bg-black bg-opacity-40 px-16 transition-transform duration-500 ${
-        isShow ? "translate-x-0" : "translate-x-full"
-      }`}
-    >
-      <form className="w-full" onSubmit={submitHandler}>
-        <Input
-          placeholder="search"
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
-        />
-      </form>
-      {/* Available search engines list */}
-      <div className="w-full flex gap-2 text-md text-opacity-60 text-white">
-        {search_engines.map((engine, index) => (
-          <span key={index}>!{engine[1]}</span>
-        ))}
-      </div>
-    </div>
+    <AnimatePresence mode="wait">
+      {isShow && (
+        <motion.div
+          initial={{ y: "-100%" }}
+          animate={{ y: 0 }}
+          exit={{ y: "-100%" }}
+          transition={{
+            duration: 0.4,
+            type: "linear",
+          }}
+          className="w-full bottom-0  h-full flex flex-col items-center justify-center absolute px-16 bg-black bg-opacity-30 backdrop-blur-md"
+        >
+          <form className="w-full" onSubmit={submitHandler}>
+            <Input
+              type="text"
+              placeholder="search"
+              value={query}
+              onChange={inputChangeHandler}
+              ref={inputRef}
+            />
+          </form>
+          {/* Available search engines list */}
+          <div className="w-full flex gap-2 text-md">
+            {search_engines.map((engine, index) => (
+              <span
+                key={index}
+                className={`text-white ${
+                  query.split("")[1] === engine[1] ? "" : "text-opacity-60"
+                }`}
+              >
+                {query.split("")[1] === engine[1]
+                  ? `${engine[2]}`
+                  : `!${engine[1]}`}
+              </span>
+            ))}
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 
