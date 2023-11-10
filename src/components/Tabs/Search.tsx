@@ -32,10 +32,9 @@ const Search = ({ isShow }: SearchProps) => {
 
     // Filter out engine hint, ex: !b, !g, !d etc
     let search_query = query.split(" ");
-    search_query.splice(0, 1);
-
     // Router push with selected search engine
     if (engines.includes(selectedSearchEngine)) {
+      search_query.splice(0, 1);
       const url = search_engines.filter(
         (i) => i[1] === selectedSearchEngine.split("")[1]
       )[0][0];

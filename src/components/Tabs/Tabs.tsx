@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, KeyboardEvent } from "react";
 import Tab from "./Tab";
 import { tabs } from "../../../config/tabs";
 import StatusBar from "../Statusbar/StatusBar";
@@ -14,22 +14,29 @@ const Tabs = ({ enableAnimations }: TabsProps) => {
 
   useEffect(() => {
     // Key mappings
-    const keyPressHandler = (event: KeyboardEventInit): void => {
+    const keyPressHandler = (event: KeyboardEvent) => {
+      const isInputFocused = event.target instanceof HTMLInputElement;
       const data: { [key: string]: () => void } = {
-        s: () => setToggleSearchWindow(true),
+        s: () => {
+          if (!isInputFocused) {
+            event.preventDefault();
+            setToggleSearchWindow(true);
+          }
+        },
         Escape: () => setToggleSearchWindow(false),
         1: () => setSelectedTab(0),
         2: () => setSelectedTab(1),
       };
-      const key: string | undefined = event.key;
-      const action = key !== undefined ? data[key] : undefined;
+      const key: string = event.key;
+      const action = data[key];
       if (action) {
         action();
       }
     };
-    document.addEventListener("keydown", keyPressHandler);
+
+    document.addEventListener("keydown", keyPressHandler as any);
     return () => {
-      document.removeEventListener("keydown", keyPressHandler);
+      document.removeEventListener("keydown", keyPressHandler as any);
     };
   }, [toggleSearchWindow]);
   return (
