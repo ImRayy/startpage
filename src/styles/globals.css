@@ -27,3 +27,13 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+/* Scrollbar */
+* ::-webkit-scrollbar {
+  @apply h-2 w-1.5;
+}
+* ::-webkit-scrollbar-track {
+  @apply mx-1 rounded-md bg-transparent;
+}
+* ::-webkit-scrollbar-thumb {
+  @apply cursor-pointer rounded-md bg-secondary;
+}
