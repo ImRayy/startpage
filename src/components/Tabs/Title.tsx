@@ -15,7 +15,7 @@ const Title = ({ text }: TitleProps) => {
   };
   return (
     <div className="w-full h-full flex items-center justify-center">
-      <div className="flex backdrop-blur-sm flex-col items-center text-6xl gap-4 border-2 p-6 uppercase">
+      <div className="flex h-72 w-24 justify-center bg-white bg-opacity-5 backdrop-blur-sm flex-col items-center text-6xl gap-4 border-2 p-6 uppercase">
         {text == "day"
           ? day
               ?.split("")

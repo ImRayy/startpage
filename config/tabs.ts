@@ -1,13 +1,14 @@
 import { Tab } from "../src/types/TabInterface";
+import { EverForest as ef } from "./colors";
 
-const color1 = "#d3c6aa";
-const color2 = "#e67e80";
-const color3 = "#e69875";
-const color4 = "#dbbc7f";
-const color5 = "#a7c080";
-const color6 = "#83c092";
-const color7 = "#7fbbb3";
-const color8 = "#d699b6";
+const color1 = ef.color1;
+const color2 = ef.color2;
+const color3 = ef.color3;
+const color4 = ef.color4;
+const color5 = ef.color5;
+const color6 = ef.color6;
+const color7 = ef.color7;
+const color8 = ef.color8;
 
 const tab_title = {
   text: "day",
@@ -15,7 +16,7 @@ const tab_title = {
     url: "https://ik.imagekit.io/rayshold/dotfiles/startpage/image.webp?updatedAt=1698519594209",
   },
 };
-const open_links_in_new_tab: boolean = true;
+const open_links_in_new_tab: boolean = false;
 const tabs: Tab[] = [
   {
     name: "一",

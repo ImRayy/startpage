@@ -1,7 +1,7 @@
 import React, { useState, useEffect, KeyboardEvent } from "react";
 import Tab from "./Tab";
 import { tabs } from "../../../config/tabs";
-import StatusBar from "../Statusbar/StatusBar";
+import StatusBar from "../Statusbar";
 import Search from "./Search";
 
 interface TabsProps {
@@ -61,7 +61,11 @@ const Tabs = ({ enableAnimations }: TabsProps) => {
         <Search isShow={toggleSearchWindow} />
       </div>
       <div className="absolute w-full bottom-0 mt-10">
-        <StatusBar tabs={tabs} setSelectedTab={setSelectedTab} />
+        <StatusBar
+          tabs={tabs}
+          selectedTab={selectedTab}
+          setSelectedTab={setSelectedTab}
+        />
       </div>
     </div>
   );

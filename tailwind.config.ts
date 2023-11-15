@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { EverForest } from "./config/colors";
 
 const config: Config = {
   content: [
@@ -11,47 +12,9 @@ const config: Config = {
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-      keyframes: {
-        "slide-in-right": {
-          "0%": {
-            transform: "translateX(200px)",
-            opacity: "0",
-          },
-          "100%": {
-            transform: "translateX(0)",
-            opacity: "1",
-          },
-        },
-      },
-      animation: {},
-      colors: {
-        primary: "#1E2326",
-        secondary: "#272e33",
-        hover: "#414b50",
-        crust: "#A7c080",
-        color1: "#d3c6aa",
-        color2: "#e67e80",
-        color3: "#e69875",
-        color4: "#dbbc7f",
-        color5: "#a7c080",
-        color6: "#83c092",
-        color7: "#7fbbb3",
-        color8: "#d699b6",
-      },
+      colors: EverForest,
       boxShadow: {
-        custom:
-          "1px 1px 0px 0px rgba(0, 0, 0, 0.1), 2px 2px 0px 0px rgba(0, 0, 0, 0.1), 3px 3px 0px 0px rgba(0, 0, 0, 0.1), 4px 4px 0px 0px rgba(0, 0, 0, 0.1), 5px 5px 0px 0px rgba(0, 0, 0, 0.1)",
-      },
-      dropShadow: {
-        glow: [
-          "0 0px 20px rgba(255,255, 255)",
-          "0 0px 65px rgba(255, 255,255)",
-        ],
+        button: "0 4px rgba(39, 46, 51, 0.5 ), 0 5px 10px rgb(0 0 0 / 20%)",
       },
     },
   },

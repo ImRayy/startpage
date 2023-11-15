@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../Button";
+import Button from "../ui/Button";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Link } from "../../types/TabInterface";
 

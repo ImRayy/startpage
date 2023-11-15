@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import Input from "../Input";
+import Input from "../ui/Input";
 import { search_engines } from "../../../config/general";
 import { useRouter } from "next/router";
 import { AnimatePresence, motion } from "framer-motion";

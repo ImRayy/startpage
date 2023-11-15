@@ -1,3 +1,4 @@
+import React from "react";
 import Tabs from "@/components/Tabs/Tabs";
 import Head from "next/head";
 import { background_image } from "../../config/general";
@@ -5,6 +6,7 @@ import { background_image } from "../../config/general";
 interface HomeProps {
   isPageLoaded: boolean;
 }
+
 export default function Home({ isPageLoaded }: HomeProps) {
   return (
     <main

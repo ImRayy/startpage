@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "blurhash": "^2.0.5",
     "framer-motion": "^10.16.4",
     "js-cookies": "^1.0.4",
     "next": "14.0.0",
