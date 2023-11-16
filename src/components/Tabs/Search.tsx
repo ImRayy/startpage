@@ -55,7 +55,7 @@ const Search = ({ isShow }: SearchProps) => {
             duration: 0.4,
             type: "linear",
           }}
-          className="w-full bottom-0  h-full flex flex-col items-center justify-center absolute px-16 bg-black bg-opacity-30 backdrop-blur-md"
+          className="absolute bottom-0  flex h-full w-full flex-col items-center justify-center bg-black bg-opacity-30 px-16 backdrop-blur-md"
         >
           <form className="w-full" onSubmit={submitHandler}>
             <Input
@@ -67,15 +67,17 @@ const Search = ({ isShow }: SearchProps) => {
             />
           </form>
           {/* Available search engines list */}
-          <div className="w-full flex gap-2 text-md">
+          <div className="text-md flex w-full gap-2">
             {search_engines.map((engine, index) => (
               <span
                 key={index}
                 className={`text-white ${
-                  query.split("")[1] === engine[1] ? "" : "text-opacity-60"
+                  query.startsWith("!") && query.startsWith(`!${engine[1]}`)
+                    ? ""
+                    : "text-opacity-60"
                 }`}
               >
-                {query.split("")[1] === engine[1]
+                {query.startsWith("!") && query.startsWith(`!${engine[1]}`)
                   ? `${engine[2]}`
                   : `!${engine[1]}`}
               </span>
