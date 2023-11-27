@@ -5,7 +5,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     <input
       {...props}
       ref={ref}
-      className="w-full h-14 bg-transparent border-b-2 border-color5 my-4 placeholder:text-white placeholder:text-opacity-70 placeholder:text-2xl placeholder:font-bold text-2xl"
+      className="my-4 h-14 w-full border-b-2 border-color5 bg-transparent text-2xl  outline-none placeholder:text-2xl placeholder:font-bold placeholder:text-white placeholder:text-opacity-70"
     />
   );
 });
