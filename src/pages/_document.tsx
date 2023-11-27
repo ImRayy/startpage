@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body className="select-none">
+      <body className="select-none text-white">
         <Main />
         <NextScript />
       </body>
